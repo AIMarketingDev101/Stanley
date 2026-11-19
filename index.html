@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Dein Moment. Dein Rhythmus. Dein Stanley.">
+  <meta property="og:description" content="Ein unabhängiges Lifestyle-Designkonzept für den Alltag.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Dein Moment. Dein Rhythmus. Dein Stanley.">
+  <meta name="twitter:description" content="Ein unabhängiges Lifestyle-Designkonzept für den Alltag.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f5ef">
+  <meta name="description" content="Dein Moment. Dein Rhythmus. Dein Stanley. Ein Landingpage-Konzept für Bewegung, Selbstfürsorge und einen aktiven Alltag.">
+  <title>Stanley — Dein Moment. Dein Rhythmus.</title>
+  <style>
+    /* DESIGN: Farben, Abstände und Schrift zentral anpassen. */
+    :root {
+      --paper:#f7f5ef;
+    --ink:#27372e;
+    --muted:#657065;
+    --rose:#ebd2ce;
+    --accent:#9b5349;
+    --sage:#dce4d7;
+    --line:#dcded4;
+    --display:Georgia,'Times New Roman',serif;
+    --sans:'Helvetica Neue',Helvetica,Arial,sans-serif}
+    
+    * {
+      box-sizing:border-box}
+    html {
+      scroll-behavior:smooth;
+    scroll-padding-top:90px}
+    body {
+      margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font:16px/1.6 var(--sans);
+    -webkit-font-smoothing:antialiased}
+    img {
+      display:block;
+    width:100%;
+    height:100%;
+    object-fit:cover}
+    a {
+      color:inherit;
+    text-decoration:none}
+    button {
+      font:inherit;
+    color:inherit;
+    cursor:pointer}
+    button,a {
+      -webkit-tap-highlight-color:transparent}
+    button:focus-visible,a:focus-visible,summary:focus-visible {
+      outline:3px solid var(--accent);
+    outline-offset:5px}
+    ::selection {
+      background:var(--rose)}
+    h1,h2,h3,p {
+      margin-top:0}
+    h1,h2,h3 {
+      font-weight:400}
+    h1,h2 {
+      font-family:var(--display);
+    letter-spacing:-.055em;
+    line-height:1.06}
+    h1 {
+      font-size:clamp(48px,5.4vw,86px)}
+    h2 {
+      font-size:clamp(38px,4.5vw,66px)}
+    h3 {
+      font-size:23px;
+    line-height:1.25;
+    letter-spacing:-.025em}
+    .wrap {
+      width:min(1280px,calc(100% - 112px));
+    margin:auto}
+    .eyebrow {
+      font-size:12px;
+    font-weight:700;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    display:block;
+    margin-bottom:23px}
+    .serif {
+      font-family:var(--display);
+    font-style:italic;
+    font-weight:400}
+    .muted {
+      color:var(--muted)}
+    .btn {
+      display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:30px;
+    padding:17px 25px;
+    background:var(--ink);
+    border:1px solid var(--ink);
+    color:#fff;
+    font-size:12px;
+    font-weight:600;
+    line-height:1.4;
+    transition:background .2s,transform .2s;
+    min-height:50px}
+    .btn:hover {
+      background:#435746;
+    transform:translateY(-2px)}
+    .btn.light {
+      background:var(--paper);
+    color:var(--ink);
+    border-color:var(--paper)}
+    .btn.line {
+      background:transparent;
+    color:var(--ink)}
+    .arrow {
+      font-size:20px;
+    font-weight:400;
+    line-height:1}
+    .textlink {
+      display:inline-flex;
+    align-items:center;
+    gap:26px;
+    padding:8px 0;
+    border-bottom:1px solid currentColor;
+    font-size:12px;
+    font-weight:600}
+    .section {
+      padding:110px 0}
+    .skip {
+      position:fixed;
+    top:-100px;
+    left:15px;
+    z-index:100;
+    background:white;
+    padding:12px}
+    .skip:focus {
+      top:10px}
+    .topline {
+      text-align:center;
+    padding:9px 20px;
+    background:var(--ink);
+    color:#f7f5ef;
+    font-size:12px;
+    letter-spacing:.12em}
+    .topline span {
+      opacity:.6;
+    margin:0 12px}
+    .header {
+      position:sticky;
+    top:0;
+    background:rgba(247,245,239,.96);
+    z-index:20;
+    border-bottom:1px solid var(--line);
+    backdrop-filter:blur(15px)}
+    .nav {
+      height:82px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:25px}
+    .logo {
+      font-size:28px;
+    font-weight:900;
+    letter-spacing:-1.5px;
+    line-height:.82;
+    display:inline-flex;
+    flex-direction:column}
+    .logo small {
+      font-size:12px;
+    font-weight:500;
+    letter-spacing:.3em;
+    text-align:center;
+    margin-top:9px}
+    .navlinks {
+      display:flex;
+    align-items:center;
+    gap:36px;
+    font-size:12px}
+    .navlinks a {
+      padding:12px 0}
+    .navlinks a:hover {
+      color:var(--accent)}
+    .nav-cta {
+      font-size:12px;
+    display:flex;
+    align-items:center;
+    gap:20px}
+    .nav-cta .circle {
+      border:1px solid #bdc5bb;
+    border-radius:50%;
+    width:35px;
+    height:35px;
+    display:grid;
+    place-items:center}
+    .menu-toggle {
+      display:none;
+    border:0;
+    background:none;
+    width:44px;
+    height:44px;
+    font-size:23px}
+    
+    /* 01 — Hero */
+    .hero {
+      display:grid;
+    grid-template-columns:1fr 1.06fr;
+    min-height:640px}
+    .hero-copy {
+      padding:83px max(40px,calc((100vw - 1280px)/2)) 58px max(56px,calc((100vw - 1280px)/2));
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    justify-content:center}
+    .hero .eyebrow {
+      display:flex;
+    align-items:center;
+    gap:9px}
+    .dot {
+      width:6px;
+    height:6px;
+    border-radius:50%;
+    background:#8d9c77;
+    display:inline-block}
+    .hero h1 {
+      margin:0 0 24px}
+    .hero h1 em {
+      font-weight:400;
+    color:var(--accent)}
+    .hero-copy>p {
+      font-size:14px;
+    line-height:1.8;
+    max-width:305px;
+    color:var(--muted);
+    margin-bottom:29px}
+    .hero-foot {
+      margin-top:44px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-size:12px;
+    letter-spacing:.04em}
+    .hero-foot:before {
+      content:'';
+    width:30px;
+    height:1px;
+    background:#9aa38e}
+    .hero-image {
+      position:relative;
+    overflow:hidden;
+    background:#e8d8cd;
+    min-height:640px}
+    .hero-image img {
+      object-position:center}
+    .hero-image:after {
+      content:'';
+    position:absolute;
+    inset:55% 0 0;
+    background:linear-gradient(transparent,rgba(28,31,24,.3))}
+    .image-caption {
+      position:absolute;
+    z-index:1;
+    bottom:29px;
+    left:30px;
+    color:white;
+    font-size:12px;
+    letter-spacing:.12em;
+    text-transform:uppercase}
+    .image-number {
+      position:absolute;
+    bottom:24px;
+    right:30px;
+    z-index:1;
+    color:#fff;
+    font:italic 27px var(--display)}
+    .ribbon {
+      display:flex;
+    justify-content:space-around;
+    align-items:center;
+    gap:20px;
+    padding:25px 30px;
+    border-bottom:1px solid var(--line);
+    font-size:12px;
+    letter-spacing:.18em;
+    text-transform:uppercase}
+    .ribbon i {
+      font:italic 16px var(--display);
+    letter-spacing:0}
+    
+    /* 02 — Das Lebensgefühl */
+    .intro {
+      text-align:center;
+    padding:100px 20px 55px}
+    .intro h2 {
+      max-width:740px;
+    margin:0 auto 22px}
+    .intro p {
+      max-width:450px;
+    font-size:13px;
+    margin:0 auto;
+    color:var(--muted)}
+    .mood-grid {
+      display:grid;
+    grid-template-columns:1fr 1.12fr .85fr;
+    gap:22px;
+    align-items:center;
+    padding-bottom:100px}
+    .mood {
+      margin:0}
+    .mood img {
+      height:350px}
+    .mood:nth-child(2) img {
+      height:435px}
+    .mood:nth-child(3) {
+      margin-top:65px}
+    .mood figcaption {
+      display:flex;
+    justify-content:space-between;
+    gap:10px;
+    font-size:12px;
+    margin-top:14px}
+    .mood figcaption span:first-child {
+      text-transform:uppercase;
+    letter-spacing:.1em}
+    .mood figcaption span:last-child {
+      color:var(--muted)}
+    
+    /* 03 — Farbauswahl */
+    .colors {
+      background:#edeae1;
+    padding:85px 0}
+    .color-grid {
+      display:grid;
+    grid-template-columns:1.1fr 1fr;
+    gap:80px;
+    align-items:center}
+    .product-stage {
+      position:relative;
+    min-height:535px;
+    display:grid;
+    place-items:center;
+    background:var(--rose);
+    transition:background .45s;
+    overflow:hidden}
+    .stage-word {
+      position:absolute;
+    top:42%;
+    left:0;
+    right:0;
+    text-align:center;
+    font-size:clamp(60px,8vw,125px);
+    font-weight:900;
+    letter-spacing:-.08em;
+    color:rgba(255,255,255,.55);
+    line-height:1}
+    .product-stage img {
+      position:relative;
+    z-index:1;
+    width:90%;
+    height:480px;
+    object-fit:contain;
+    filter:drop-shadow(0 20px 17px rgba(38,39,26,.11));
+    transition:opacity .2s,transform .35s}
+    .product-stage:hover img {
+      transform:rotate(-3deg) translateY(-6px)}
+    .stage-label {
+      position:absolute;
+    left:24px;
+    top:20px;
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:.16em}
+    .product-copy h2 {
+      margin-bottom:20px}
+    .product-copy>p {
+      font-size:13px;
+    max-width:330px;
+    color:var(--muted)}
+    .product-name {
+      font-size:12px;
+    margin:30px 0 3px;
+    font-weight:600}
+    .price {
+      font-size:20px;
+    margin-bottom:23px}
+    .price small {
+      font-size:12px;
+    color:var(--muted);
+    display:inline-block;
+    margin-left:10px}
+    .color-label {
+      font-size:12px;
+    margin-bottom:14px}
+    .color-label strong {
+      font-weight:500}
+    .swatches {
+      display:flex;
+    gap:13px;
+    margin-bottom:27px}
+    .swatch {
+      width:36px;
+    height:36px;
+    padding:4px;
+    border:1px solid transparent;
+    border-radius:50%;
+    background:transparent;
+    display:grid;
+    place-items:center}
+    .swatch span {
+      display:block;
+    background:var(--swatch);
+    width:25px;
+    height:25px;
+    border-radius:50%;
+    border:1px solid rgba(0,0,0,.08)}
+    .swatch[aria-pressed="true"] {
+      border-color:var(--ink)}
+    .swatch:hover {
+      transform:scale(1.09)}
+    .product-note {
+      font-size:12px!important;
+    margin:13px 0 0!important;
+    max-width:360px!important}
+    .product-copy .btn {
+      width:min(100%,350px);
+    justify-content:space-between}
+    
+    /* 04 — Rituale */
+    .section-head {
+      display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:30px;
+    margin-bottom:42px}
+    .section-head h2 {
+      margin:0;
+    max-width:600px}
+    .section-head>p {
+      font-size:12px;
+    max-width:235px;
+    color:var(--muted);
+    margin:0 0 5px}
+    .ritual-grid {
+      display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px}
+    .ritual-img {
+      height:355px;
+    position:relative;
+    overflow:hidden}
+    .ritual-img img {
+      transition:transform .8s}
+    .ritual:hover img {
+      transform:scale(1.04)}
+    .time {
+      position:absolute;
+    top:15px;
+    left:15px;
+    padding:6px 11px;
+    background:rgba(247,245,239,.92);
+    font-size:12px;
+    letter-spacing:.08em}
+    .ritual-copy {
+      padding-top:22px;
+    border-top:0}
+    .ritual-copy .eyebrow {
+      font-size:12px;
+    margin-bottom:12px;
+    color:var(--muted)}
+    .ritual-copy h3 {
+      font-family:var(--display);
+    font-size:29px;
+    margin-bottom:12px}
+    .ritual-copy p {
+      font-size:12px;
+    line-height:1.8;
+    color:var(--muted);
+    max-width:300px}
+    
+    /* 05 — Produktdetails */
+    .details {
+      background:var(--sage)}
+    .details-grid {
+      display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:center;
+    gap:85px}
+    .detail-image {
+      height:540px;
+    position:relative}
+    .detail-image img {
+      object-position:center}
+    .detail-image span {
+      position:absolute;
+    bottom:20px;
+    left:20px;
+    color:white;
+    font-size:12px;
+    letter-spacing:.12em}
+    .detail-copy h2 {
+      margin-bottom:28px}
+    .feature {
+      display:grid;
+    grid-template-columns:32px 1fr;
+    gap:13px;
+    border-top:1px solid #bfcab8;
+    padding:19px 0}
+    .feature-number {
+      font-size:12px;
+    padding-top:4px;
+    color:#65765f}
+    .feature h3 {
+      font-size:14px;
+    margin-bottom:5px}
+    .feature p {
+      font-size:12px;
+    color:#52634e;
+    line-height:1.7;
+    margin:0;
+    max-width:320px}
+    .source {
+      font-size:12px;
+    color:#52634e;
+    line-height:1.8;
+    margin:8px 0 0}
+    .source a {
+      text-decoration:underline;
+    text-underline-offset:3px}
+    
+    /* 06 — Community */
+    .community-top {
+      text-align:center;
+    max-width:660px;
+    margin:0 auto 40px}
+    .community-top h2 {
+      margin-bottom:20px}
+    .community-top>p {
+      font-size:13px;
+    color:var(--muted);
+    max-width:420px;
+    margin:0 auto}
+    .community-grid {
+      display:grid;
+    grid-template-columns:1fr 1fr 1fr 1fr;
+    gap:14px}
+    .community-grid figure {
+      margin:0;
+    position:relative;
+    height:300px;
+    overflow:hidden}
+    .community-grid figure:nth-child(even) {
+      margin-top:30px}
+    .community-grid img {
+      transition:transform .6s}
+    .community-grid figure:hover img {
+      transform:scale(1.06)}
+    .community-grid figcaption {
+      position:absolute;
+    bottom:15px;
+    left:15px;
+    color:#fff;
+    font-size:12px;
+    text-shadow:0 1px 8px #000}
+    .community-foot {
+      display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:25px;
+    margin-top:42px}
+    .community-foot p {
+      font-size:12px;
+    color:var(--muted);
+    max-width:370px;
+    margin:0}
+    .community-foot .textlink {
+      flex-shrink:0}
+    .community-note {
+      font-size:12px;
+    color:var(--muted);
+    margin:20px 0 0}
+    
+    /* 07 — Abschluss */
+    .final {
+      background:var(--rose);
+    padding:70px 0;
+    overflow:hidden;
+    transition:background .45s}
+    .final-grid {
+      display:grid;
+    grid-template-columns:1.2fr .8fr;
+    align-items:center;
+    gap:40px}
+    .final h2 {
+      font-size:clamp(44px,5.5vw,78px);
+    margin-bottom:23px}
+    .final-copy>p {
+      font-size:13px;
+    margin-bottom:25px;
+    max-width:360px}
+    .final-product {
+      height:350px;
+    position:relative;
+    display:grid;
+    place-items:center}
+    .final-product:before {
+      content:'';
+    position:absolute;
+    width:260px;
+    height:260px;
+    background:rgba(255,255,255,.25);
+    border-radius:50%}
+    .final-product img {
+      position:relative;
+    height:390px;
+    width:100%;
+    object-fit:contain;
+    transform:rotate(10deg);
+    filter:drop-shadow(14px 18px 12px rgba(60,45,32,.12))}
+    .final-price {
+      display:flex;
+    gap:12px;
+    align-items:baseline;
+    margin-bottom:22px;
+    font-size:12px}
+    .final-price strong {
+      font-size:20px;
+    font-weight:400}
+    .final-note {
+      font-size:12px!important;
+    margin:15px 0 0!important;
+    color:#5f5049}
+    .shipping {
+      font-size:12px;
+    margin-top:15px!important;
+    line-height:1.7}
+    
+    /* 08 — Fragen & Footer */
+    .faq-grid {
+      display:grid;
+    grid-template-columns:.7fr 1.3fr;
+    gap:100px}
+    .faq h2 {
+      font-size:44px}
+    .faq details {
+      border-bottom:1px solid var(--line)}
+    .faq details:first-child {
+      border-top:1px solid var(--line)}
+    .faq summary {
+      list-style:none;
+    padding:23px 33px 23px 0;
+    cursor:pointer;
+    font-size:13px;
+    position:relative}
+    .faq summary::-webkit-details-marker {
+      display:none}
+    .faq summary:after {
+      content:'+';
+    position:absolute;
+    right:1px;
+    top:17px;
+    font-size:23px;
+    font-weight:300}
+    .faq details[open] summary:after {
+      content:'−'}
+    .faq details p {
+      font-size:12px;
+    line-height:1.9;
+    max-width:550px;
+    color:var(--muted);
+    padding:0 30px 23px 0;
+    margin:0}
+    .faq details a {
+      text-decoration:underline}
+    .footer {
+      background:var(--ink);
+    color:var(--paper);
+    padding:55px 0 24px}
+    .footer-top {
+      display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:30px;
+    padding-bottom:40px}
+    .footer-tag {
+      font:italic 30px var(--display);
+    margin:0}
+    .footer-bottom {
+      border-top:1px solid #566153;
+    padding-top:20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:30px;
+    font-size:12px;
+    color:#bfc7bb}
+    .footer-links {
+      display:flex;
+    gap:20px;
+    flex-wrap:wrap}
+    .footer-links button {
+      background:none;
+    border:0;
+    padding:0;
+    font-size:12px;
+    color:inherit}
+    .concept {
+      margin:20px 0 0;
+    color:#bfc7bb;
+    font-size:12px;
+    max-width:740px;
+    line-height:1.7}
+    dialog {
+      background:var(--paper);
+    color:var(--ink);
+    border:0;
+    padding:35px;
+    max-width:550px;
+    width:calc(100% - 40px)}
+    dialog::backdrop {
+      background:rgba(20,32,23,.5);
+    backdrop-filter:blur(4px)}
+    dialog h2 {
+      font-size:33px;
+    margin-top:20px}
+    dialog p {
+      font-size:13px}
+    .dialog-close {
+      float:right;
+    border:0;
+    background:none;
+    font-size:25px}
+    .reveal {
+      transition:opacity .7s,transform .7s}
+    .js .reveal.pending {
+      opacity:0;
+    transform:translateY(22px)}
+    
+    @media(min-width:1500px) {
+      .hero-copy {
+      padding-right:70px}
+    .hero {
+      min-height:710px}
+    .hero-image {
+      min-height:710px}
+    }
+    
+    @media(max-width:1050px) {
+      .wrap {
+      width:calc(100% - 64px)}
+    .hero-copy {
+      padding:55px 32px}
+    .hero,.hero-image {
+      min-height:600px}
+    .hero h1 {
+      font-size:57px}
+    .color-grid,.details-grid {
+      gap:40px}
+    .product-stage {
+      min-height:470px}
+    .product-stage img {
+      height:430px}
+    .mood-grid {
+      gap:15px}
+    .mood img {
+      height:290px}
+    .mood:nth-child(2) img {
+      height:360px}
+    .community-grid figure {
+      height:245px}
+    .ritual-img {
+      height:290px}
+    .faq-grid {
+      gap:55px}
+    .navlinks {
+      gap:23px}
+    .detail-image {
+      height:490px}
+    }
+    
+    @media(max-width:900px) {
+      html {
+      scroll-padding-top:75px}
+    .wrap {
+      width:calc(100% - 40px)}
+    .topline {
+      font-size:12px;
+    padding:8px 12px}
+    .topline span {
+      margin:0 5px}
+    .nav {
+      height:68px;
+    gap:14px}
+    .logo {
+      font-size:25px}
+    .logo small {
+      font-size:12px}
+    .nav-cta {
+      margin-left:auto;
+    font-size:12px;
+    gap:8px}
+    .nav-cta .circle {
+      width:29px;
+    height:29px}
+    .menu-toggle {
+      display:block}
+    .navlinks {
+      display:none;
+    position:absolute;
+    top:68px;
+    left:0;
+    right:0;
+    background:var(--paper);
+    padding:20px;
+    border-bottom:1px solid var(--line);
+    flex-direction:column;
+    align-items:flex-start;
+    gap:8px}
+    .navlinks.open {
+      display:flex}
+    .hero {
+      grid-template-columns:1fr;
+    min-height:0}
+    .hero-copy {
+      padding:48px 24px 38px}
+    .hero h1 {
+      font-size:clamp(43px,12.5vw,61px);
+    letter-spacing:-.06em}
+    .hero-copy>p {
+      max-width:290px}
+    .hero-foot {
+      margin-top:28px}
+    .hero-image {
+      min-height:0;
+    height:460px}
+    .hero-image img {
+      object-position:center 40%}
+    .hero-image .image-caption {
+      left:22px;
+    bottom:20px;
+    font-size:12px}
+    .ribbon {
+      padding:21px 16px;
+    gap:10px;
+    font-size:12px;
+    letter-spacing:.07em}
+    .ribbon i {
+      font-size:13px}
+    .intro {
+      padding:65px 20px 35px}
+    .intro h2 {
+      font-size:40px}
+    .intro p {
+      font-size:12px}
+    .mood-grid {
+      grid-template-columns:1fr 1fr;
+    gap:15px;
+    padding-bottom:65px}
+    .mood img {
+      height:245px}
+    .mood:nth-child(2) img {
+      height:290px}
+    .mood:nth-child(3) {
+      display:block;
+    grid-column:1 / -1;
+    margin-top:0}
+    .mood:nth-child(3) img {
+      height:245px}
+    .mood figcaption {
+      font-size:12px;
+    gap:4px;
+    flex-direction:column}
+    .colors {
+      padding:55px 0}
+    .color-grid {
+      grid-template-columns:1fr;
+    gap:35px}
+    .product-stage {
+      min-height:420px}
+    .product-stage img {
+      height:390px}
+    .stage-word {
+      font-size:95px}
+    .product-copy h2 {
+      font-size:43px}
+    .product-copy>p {
+      max-width:100%}
+    .product-copy .btn {
+      width:100%;
+    max-width:none}
+    .section {
+      padding:65px 0}
+    .section-head {
+      display:block;
+    margin-bottom:30px}
+    .section-head h2 {
+      margin-bottom:18px;
+    font-size:42px}
+    .section-head>p {
+      max-width:280px}
+    .ritual-grid {
+      grid-template-columns:1fr;
+    gap:33px}
+    .ritual {
+      display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+    align-items:center}
+    .ritual-img {
+      height:255px}
+    .ritual-copy {
+      padding-top:0}
+    .ritual-copy h3 {
+      font-size:26px}
+    .ritual-copy p {
+      font-size:12px}
+    .ritual-copy .eyebrow {
+      font-size:12px;
+    letter-spacing:.09em}
+    .time {
+      font-size:12px;
+    left:10px;
+    top:10px}
+    .details-grid {
+      grid-template-columns:1fr;
+    gap:35px}
+    .detail-image {
+      height:400px}
+    .detail-copy h2 {
+      font-size:43px}
+    .community-top h2 {
+      font-size:41px}
+    .community-grid {
+      grid-template-columns:1fr 1fr;
+    gap:12px}
+    .community-grid figure {
+      height:240px}
+    .community-grid figure:nth-child(even) {
+      margin-top:20px}
+    .community-grid figure:nth-child(3) {
+      margin-top:-20px}
+    .community-foot {
+      align-items:flex-start;
+    flex-direction:column;
+    margin-top:30px;
+    gap:18px}
+    .community-note {
+      font-size:12px}
+    .final {
+      padding:55px 0 25px}
+    .final-grid {
+      grid-template-columns:1fr;
+    gap:10px}
+    .final h2 {
+      font-size:50px}
+    .final-product {
+      height:285px;
+    grid-row:2}
+    .final-product img {
+      height:320px}
+    .final-product:before {
+      width:220px;
+    height:220px}
+    .faq-grid {
+      grid-template-columns:1fr;
+    gap:12px}
+    .faq h2 {
+      font-size:40px;
+    margin-bottom:20px}
+    .faq summary {
+      font-size:12px}
+    .footer {
+      padding-top:40px}
+    .footer-top {
+      align-items:flex-start;
+    flex-direction:column;
+    gap:28px;
+    padding-bottom:30px}
+    .footer-tag {
+      font-size:27px}
+    .footer-bottom {
+      align-items:flex-start;
+    flex-direction:column;
+    gap:17px}
+    .eyebrow {
+      font-size:12px}
+    .btn {
+      font-size:12px}
+    .image-number {
+      font-size:23px}
+    }
+    
+    @media(prefers-reduced-motion:reduce) {
+      html {
+      scroll-behavior:auto}
+    *,*:before,*:after {
+      transition:none!important;
+    animation:none!important}
+    .js .reveal.pending {
+      opacity:1;
+    transform:none}
+    }
+    
+  .logo-image {
+      display:block;
+    flex-shrink:0;
+    width:170px;
+    line-height:0}
+    .logo-image img {
+      width:100%;
+    height:auto;
+    object-fit:contain}
+    .footer .logo-image img {
+      filter:invert(1)}
+    @media(max-width:900px) {
+      .logo-image {
+      width:125px}
+    }
+    
+  .stage-bottom,
+  .navlinks {
+      font-size:14px}
+    .nav-cta {
+      font-size:13px}
+    @media(max-width:900px) {
+      .navlinks {
+      font-size:14px}
+    .nav-cta {
+      font-size:12px}
+    }
+    
+  
+/* Accessibility and responsive refinements. */
+.stage-bottom  {
+      position:absolute;
+    bottom:20px;
+    left:24px;
+    right:24px;
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    gap:10px;
+    font:400 14px var(--sans);
+    letter-spacing:.02em;
+    text-transform:uppercase;
+    color:#fff;
+    text-shadow:0 1px 4px #24372e}
+    
+.illustration-label  {
+      padding:5px 8px;
+    background:#27372e;
+    color:#fff;
+    font-size:12px;
+    letter-spacing:0;
+    text-transform:none;
+    text-shadow:none}
+    
+.illustration-label[hidden],.final-illustration[hidden]  {
+      display:none}
+    
+.final-illustration  {
+      font-size:14px!important;
+    font-weight:600}
+    
+.product-note  {
+      font-size:14px!important;
+    line-height:1.6}
+    
+.product-note strong  {
+      font-weight:700}
+    
+.price small  {
+      font-size:13px}
+    
+.eyebrow,.stage-label,.feature-number,.time,.community-note,.source,.concept,.footer-bottom  {
+      font-size:12px;
+    letter-spacing:.08em}
+    
+.intro p,.product-copy>p,.section-head>p,.ritual-copy p,.feature p,.community-top>p,.community-foot p,.final-copy>p,.faq details p,.shipping  {
+      font-size:15px;
+    line-height:1.65}
+    
+.navlinks a,.nav-cta,.footer-links a,.footer-links button,.source a,.final-note a  {
+      min-height:44px;
+    display:inline-flex;
+    align-items:center}
+    
+.swatch  {
+      width:44px;
+    height:44px;
+    flex-shrink:0}
+    
+.dialog-close  {
+      min-width:44px;
+    min-height:44px}
+    
+.btn,.textlink  {
+      min-height:44px}
+    
+.nav  {
+      gap:15px}
+    .navlinks  {
+      gap:18px;
+    font-size:13px}
+    .nav-cta  {
+      font-size:12px;
+    white-space:nowrap}
+    
+.hero-copy>p  {
+      font-size:16px}
+    .navlinks a  {
+      white-space:nowrap}
+    
+.menu-open  {
+      overflow:hidden}
+    
+@media(max-width:1050px) {
+      .navlinks {
+      gap:10px;
+    font-size:12px}
+    .nav-cta {
+      font-size:12px}
+    .wrap {
+      width:calc(100% - 48px)}
+    }
+    
+@media(max-width:900px) {
+      .wrap {
+      width:calc(100% - 40px)}
+    .navlinks {
+      font-size:15px;
+    max-height:calc(100dvh - 68px);
+    overflow-y:auto}
+    .nav-cta {
+      font-size:12px}
+    .topline {
+      font-size:12px}
+    .ribbon {
+      font-size:12px;
+    letter-spacing:.02em;
+    flex-wrap:wrap}
+    .mood figcaption {
+      font-size:12px}
+    .ritual-copy p {
+      font-size:14px}
+    .eyebrow,.ritual-copy .eyebrow,.community-note {
+      font-size:12px}
+    .stage-word {
+      font-size:clamp(54px,15vw,95px)}
+    .stage-bottom {
+      font-size:12px}
+    .swatches {
+      gap:8px;
+    flex-wrap:wrap}
+    .footer-bottom,.footer-links button {
+      font-size:12px}
+    .footer-links {
+      gap:12px}
+    .final-product img {
+      max-width:100%}
+    }
+    
+
+  
+  
+    /* Gleichmäßiger Seitenabstand auf großen Bildschirmen. */
+    @media (min-width: 901px) {
+      .nav.wrap { width: calc(100% - 2 * clamp(32px, 4vw, 80px)); max-width: none; }
+      .hero-copy { padding-left: clamp(32px, 4vw, 80px); padding-right: clamp(32px, 4vw, 80px); }
+    }
+  
+    /* Durchgehend flüssige Seitenbreite mit responsiven Außenabständen. */
+    .wrap, .nav.wrap {
+      width: calc(100% - 2 * clamp(20px, 4vw, 80px));
+      max-width: none;
+    }
+    .color-grid > *, .details-grid > *, .final-grid > *, .faq-grid > *,
+    .mood-grid > *, .ritual-grid > *, .community-grid > * { min-width: 0; }
+    @media (max-width: 900px) {
+      .wrap, .nav.wrap { width: calc(100% - 40px); }
+    }
+  .stage-bottom{gap:8px;flex-wrap:wrap}.stage-bottom #stage-color{overflow-wrap:anywhere}.product-note,.shipping{font-size:14px;line-height:1.5}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Zum Inhalt springen</a>
+  <div class="topline">Beweg dich. Atme durch. Bleib bei dir. <span>·</span> Dein Alltag, dein Rhythmus.</div>
+  <header class="header">
+    <nav class="nav wrap" aria-label="Hauptnavigation">
+      <a class="logo logo-image" href="#main" aria-label="Stanley – Startseite"><img src="assets/bild-da3314476a5d.png" alt="Stanley" width="2170" height="725"></a>
+      <div class="navlinks" id="navigation"><a href="#lifestyle">Dein Lifestyle</a><a href="#farben">Deine Farbe</a><a href="#rituale">Rituale</a><a href="#community">Community</a><a href="#fragen">FAQ</a></div>
+      <a class="nav-cta" href="#farben">Deinen Stanley finden <span class="circle" aria-hidden="true">↗</span></a>
+      <button class="menu-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navigation">☰</button>
+    </nav>
+  </header>
+  <main id="main">
+    <!-- 01: Emotionaler Einstieg -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <span class="eyebrow"><span class="dot" aria-hidden="true"></span> STANLEY TRINKFLASCHEN &amp; QUENCHER</span>
+        <h1 id="hero-title">Dein Moment.<br>Dein Rhythmus.<br><em>Dein Stanley.</em></h1>
+        <p>Thermoisolierte Stanley Trinkflaschen und Quencher begleiten dich durchs Büro, Studium, Training und nach draußen – für alle, die viel unterwegs sind.</p>
+        <a class="btn" href="#farben">Entdecke deine Trinkflasche <span class="arrow" aria-hidden="true">↗</span></a>
+        <div class="hero-foot">Ein kleines Ritual. Ein gutes Gefühl.</div>
+      </div>
+      <div class="hero-image"><img src="assets/bild-f7bd3ab93fae.webp" alt="Stanley Quencher in Rose Quartz als Begleiter eines aktiven Alltags" fetchpriority="high" width="1300" height="1300"><span class="image-caption">Weniger müssen. Mehr du sein.</span><span class="image-number" aria-hidden="true">01 / everyday</span></div>
+    </section>
+    <div class="ribbon" aria-label="Unser Lebensgefühl"><span>BEWEGUNG MIT FREUDE</span><i aria-hidden="true">✳</i><span>ZEIT FÜR DICH</span><i aria-hidden="true">✳</i><span>FIND DEINEN FLOW</span></div>
+    <!-- 02: Lifestyle und emotionale Verbindung -->
+    <section id="lifestyle" aria-labelledby="lifestyle-title">
+      <div class="intro reveal"><span class="eyebrow">GUTE GEFÜHLE BEGINNEN IM KLEINEN</span><h2 id="lifestyle-title">Dein Alltag ist in Bewegung.<br><em>Mach ihn zu deinem.</em></h2><p>Ein Weg durch die Stadt. Eine Pause im Büro oder Studium. Eine Runde draußen. Für jeden Tag gibt es kleine Momente, die sich nach dir anfühlen.</p></div>
+      <div class="mood-grid wrap">
+        <figure class="mood reveal"><img src="assets/bild-9ed1a5e2c7c2.webp" alt="Stanley in einer entspannten Alltagsszene" loading="lazy" width="840" height="840"><figcaption><span>01 — Kleine Auszeiten</span><span>Raum für dich.</span></figcaption></figure>
+        <figure class="mood reveal"><img src="assets/bild-49237ee9788f.webp" alt="Zwei Personen mit Stanley Quenchern im Fitnessstudio" loading="lazy" width="1300" height="1300"><figcaption><span>02 — Dein eigener Rhythmus</span><span>Ganz ohne Eile.</span></figcaption></figure>
+        <figure class="mood reveal"><img src="assets/bild-0c147cc747cf.webp" alt="Person mit einem Stanley Quencher in einer entspannten Alltagsszene" loading="lazy" width="1300" height="1300"><figcaption><span>03 — Einfach dabei</span><span>Wohin du auch gehst.</span></figcaption></figure>
+      </div>
+    </section>
+    <!-- 03: Interaktive Produktauswahl; Bilder und Links wechseln gemeinsam. -->
+    <section class="colors" id="farben" aria-labelledby="colors-title">
+      <div class="color-grid wrap">
+        <div class="product-stage" id="product-stage" style="background:#c6cdc3"><span class="stage-label">DEIN ALLTAG. DEINE SIGNATURE.</span><span class="stage-word" aria-hidden="true">YOUR FLOW.</span><img id="product-image" src="assets/bild-85dfeeeb26d1.webp" alt="Schwarzer Stanley Quencher H2.0 FlowState in Black 2.0" loading="lazy" width="1300" height="1300"><div class="stage-bottom"><span id="stage-color">Mitternachtsflow · Black 2.0</span><span class="illustration-label" id="illustration-label" hidden>Farbentwurf · Illustration</span><span>QUENCHER</span></div></div>
+        <div class="product-copy reveal"><span class="eyebrow">DEIN ALLTAGSFAVORIT</span><h2 id="colors-title">Deine Farbe.<br><em>Dein Ausdruck.</em></h2><p>So individuell wie dein Lieblingsoutfit. So selbstverständlich wie dein Morgenritual. Finde den Stanley, der sich nach dir anfühlt.</p><div class="product-name">Quencher® H2.0 FlowState™</div><div class="price"><small>Preis, Größe und Verfügbarkeit im offiziellen Shop.</small></div><p class="color-label">Deine Farbe: <strong id="color-name" aria-live="polite">Mitternachtsflow · Black 2.0</strong></p>
+          <div class="swatches" role="group" aria-label="Produktfarbe auswählen; mit Pfeiltasten wechseln">
+            <button class="swatch" type="button" data-color="rose" aria-label="Rose Quartz 2.0" aria-pressed="false" style="--swatch:#e5c4c4"><span></span></button>
+            <button class="swatch" type="button" data-color="pistachio" aria-label="Olivenlicht, Farbentwurf – illustriert" aria-pressed="false" style="--swatch:#b9c59a"><span></span></button>
+            <button class="swatch" type="button" data-color="cream" aria-label="Cream 2.0" aria-pressed="false" style="--swatch:#ece5d1"><span></span></button>
+            <button class="swatch" type="button" data-color="blue" aria-label="Himmelspause, Farbentwurf – illustriert" aria-pressed="false" style="--swatch:#b9d0d8"><span></span></button>
+            <button class="swatch" type="button" data-color="lilac" aria-label="Fliedermoment, Farbentwurf – illustriert" aria-pressed="false" style="--swatch:#cbbdd5"><span></span></button>
+            <button class="swatch" type="button" data-color="black" aria-label="Black 2.0" aria-pressed="true" style="--swatch:#343734"><span></span></button>
+          </div>
+          <a class="btn shop-link" href="https://eu.stanley1913.com/de/products/quencher-h2-0-flowstate-tumbler-1-18-l?variant=53973526413672" target="_blank" rel="noopener noreferrer">Zum offiziellen Stanley-Shop <span class="arrow" aria-hidden="true">↗</span></a><p class="product-note">Der offizielle Stanley-Shop öffnet sich in einem neuen Tab.</p><p class="product-note"><span id="variant-note" role="status">Shop-Farbe: Black 2.0. Preis, Farbe und Verfügbarkeit gelten im Shop.</span></p>
+        </div>
+      </div>
+    </section>
+    <!-- 04: Drei Rituale statt Leistungsdruck -->
+    <section class="section" id="rituale" aria-labelledby="rituals-title"><div class="wrap"><div class="section-head reveal"><div><span class="eyebrow">KLEINE RITUALE. JEDEN TAG.</span><h2 id="rituals-title">Mach Platz für das,<br><em>was dir guttut.</em></h2></div><p>Kein perfekter Plan nötig.<br>Nur ein paar Momente, die dir gehören.</p></div><div class="ritual-grid">
+      <article class="ritual reveal"><div class="ritual-img"><img src="assets/bild-94dde30e43d2.webp" alt="Rosafarbener Stanley Quencher auf einem Tisch im Tageslicht" loading="lazy" width="1050" height="1050"><span class="time">08:00 · SLOW START</span></div><div class="ritual-copy"><span class="eyebrow">01 / ANKOMMEN</span><h3>Zeit für dich.</h3><p>Bevor der Tag laut wird: durchatmen, einen Schluck trinken und in deinem Tempo starten.</p></div></article>
+      <article class="ritual reveal"><div class="ritual-img"><img src="assets/bild-49237ee9788f.webp" alt="Zwei Personen mit Stanley Quenchern in einer Trainingspause im Gym" loading="lazy" width="1300" height="1300"><span class="time">12:30 · YOUR MOVEMENT</span></div><div class="ritual-copy"><span class="eyebrow">02 / IN BEWEGUNG KOMMEN</span><h3>Finde deinen Flow.</h3><p>Lauf, Gym oder ein Spaziergang: Beweg dich so, wie es sich für dich gut anfühlt.</p></div></article>
+      <article class="ritual reveal"><div class="ritual-img"><img src="assets/bild-f7bd3ab93fae.webp" alt="Person mit Stanley Quencher an der frischen Luft" loading="lazy" width="1300" height="1300"><span class="time">17:00 · LITTLE RESET</span></div><div class="ritual-copy"><span class="eyebrow">03 / LOSLASSEN</span><h3>Einfach mal raus.</h3><p>Im Zug, auf einer Wanderung oder auf dem Heimweg: Eine kleine Pause passt immer dazwischen.</p></div></article>
+    </div></div></section>
+    <!-- 05: Belegte Produktdetails -->
+    <section class="details section" aria-labelledby="details-title"><div class="details-grid wrap"><div class="detail-image"><img src="assets/bild-2fcc786330f7.webp" alt="Stanley Quencher neben einer Yogamatte und Sportschuhen" loading="lazy" width="1300" height="1300"><span>DESIGNED TO GO WITH YOU.</span></div><div class="detail-copy reveal"><span class="eyebrow">GUTES GEFÜHL. DURCHDACHTE DETAILS.</span><h2 id="details-title">Passt zu dir.<br><em>Und in deinen Tag.</em></h2><div class="feature"><span class="feature-number">01</span><div><h3>Einmal füllen. Lange kalt genießen.</h3><p>Die Vakuumisolierung hält dein Getränk laut Hersteller bis zu 11 Stunden kalt – vom ersten Termin bis zur Trainingspause.</p></div></div><div class="feature"><span class="feature-number">02</span><div><h3>Immer dabei. Immer griffbereit.</h3><p>Der Griff mit Komforteinsätzen liegt gut in der Hand. Dein Getränk bleibt bei dir – unterwegs, im Büro und beim Training.</p></div></div><div class="feature"><span class="feature-number">03</span><div><h3>Weniger Abwasch. Mehr Zeit für dich.</h3><p>Laut Hersteller ist der Quencher spülmaschinenfest. So ist er nach deinem Tag unkompliziert wieder bereit.</p></div></div><p class="source">Die Herstellerangaben beziehen sich auf das verlinkte Quencher-Modell. <a href="https://eu.stanley1913.com/de/products/quencher-h2-0-flowstate-tumbler-1-18-l" target="_blank" rel="noopener noreferrer">Produktinformationen vom Hersteller</a> · Stand: 06.11.2026.</p></div></div></section>
+    <!-- 06: Community-Inspiration; keine erfundenen Testimonials. -->
+    <section class="section" id="community" aria-labelledby="community-title"><div class="wrap"><div class="community-top reveal"><span class="eyebrow">GEMEINSAM. AUF UNSERE ART.</span><h2 id="community-title">Viele Routinen.<br><em>Ein gutes Lebensgefühl.</em></h2><p>Frühaufsteher oder Spätstarter. Büro, Studio oder Stadtpark. Hier ist Platz für deinen ganz eigenen Rhythmus.</p></div><div class="community-grid"><figure><img src="assets/bild-f7bd3ab93fae.webp" alt="Lifestyle-Inspiration mit einem Stanley Quencher in Rosa" loading="lazy" width="1300" height="1300"><figcaption>your daily movement</figcaption></figure><figure><img src="assets/bild-49237ee9788f.webp" alt="Zwei Personen mit Stanley Quenchern im Fitnessstudio" loading="lazy" width="1300" height="1300"><figcaption>little moments, big mood</figcaption></figure><figure><img src="assets/bild-0c147cc747cf.webp" alt="Person mit einem Stanley Quencher beim Entspannen" loading="lazy" width="1300" height="1300"><figcaption>a moment to yourself</figcaption></figure><figure><img src="assets/bild-2fcc786330f7.webp" alt="Ein Stanley Quencher bei einer Pause vom Training" loading="lazy" width="1300" height="1300"><figcaption>find your own flow</figcaption></figure></div><div class="community-foot"><p>Du möchtest wissen, wie sich der Quencher im Alltag bewährt? Entdecke die Kundenbewertungen direkt bei Stanley.</p><a class="textlink" href="https://eu.stanley1913.com/de/products/quencher-h2-0-flowstate-tumbler-1-18-l#reviews" target="_blank" rel="noopener noreferrer">Bewertungen bei Stanley <span aria-hidden="true">↗</span></a></div><p class="community-note">Lifestyle-Inspiration mit Herstellerbildern; die abgebildeten Personen sind keine hier zitierten Kundinnen oder Kunden.</p></div></section>
+    <!-- 07: Emotionaler Abschluss -->
+    <section class="final" style="background:#c6cdc3" id="dein-stanley" aria-labelledby="final-title"><div class="final-grid wrap"><div class="final-copy"><span class="eyebrow">DEIN NÄCHSTES LIEBLINGSRITUAL</span><h2 id="final-title">Ein kleines Ritual.<br><em>Ganz dein Stil.</em></h2><p>Dein Alltag steckt voller Möglichkeiten, dir etwas Gutes zu tun. Nimm dein neues Lieblingsstück mit.</p><p class="final-illustration" id="final-illustration" hidden>Farbentwurf · Illustration, keine tatsächliche Produktfarbe.</p><div class="final-price"><span id="final-color">Mitternachtsflow · Black 2.0</span></div><a class="btn shop-link" href="https://eu.stanley1913.com/de/products/quencher-h2-0-flowstate-tumbler-1-18-l?variant=53973526413672" target="_blank" rel="noopener noreferrer">Zum offiziellen Stanley-Shop <span class="arrow" aria-hidden="true">↗</span></a><p class="final-note">Oder <a class="textlink" style="border:0;text-decoration:underline" href="#farben">noch einmal deine Farbe wählen</a>.</p><p class="shipping">Der offizielle Stanley-Shop öffnet sich in einem neuen Tab. Preis, Farbe und Verfügbarkeit gelten dort.</p></div><div class="final-product"><img id="final-image" src="assets/bild-85dfeeeb26d1.webp" alt="Schwarzer Stanley Quencher in Black 2.0" loading="lazy" width="1300" height="1300"></div></div></section>
+    <!-- 08: Fragen, Kontakt und rechtliche Hinweise -->
+    <section class="section faq" id="fragen" aria-labelledby="faq-title"><div class="faq-grid wrap"><div><span class="eyebrow">GUT ZU WISSEN</span><h2 id="faq-title">Noch eine<br><em>kleine Frage?</em></h2></div><div>
+      <details><summary>Welcher Stanley wird hier gezeigt?</summary><p>Gezeigt ist der Quencher® H2.0 FlowState™. Die Farbauswahl kombiniert Herstellerfarben und gekennzeichnete Farbentwürfe. Größe, Preis und verfügbares Sortiment findest du im offiziellen Stanley-Shop.</p></details>
+      <details><summary>Kann ich den Quencher in meiner Sporttasche transportieren?</summary><p>Für den Transport solltest du ihn aufrecht halten. Der FlowState-Deckel bietet mehrere Positionen und einen Spritzschutz an der Trinkhalmöffnung; der Quencher ist keine vollständig auslaufsichere Flasche. Für eine liegende Aufbewahrung in der Tasche solltest du ein entsprechend dichtes Modell wählen.</p></details>
+      <details><summary>Wie reinige ich meinen Quencher?</summary><p>Laut Hersteller sind die Teile dieses Modells für die Spülmaschine geeignet. Beachte außerdem die Pflegehinweise, die deinem Produkt beiliegen.</p></details>
+      <details><summary>Wie bestelle ich und wann kommt mein Stanley an?</summary><p>Die Shop-Buttons öffnen die Produktseite von Stanley in einem neuen Tab. Dort prüfst du die Verfügbarkeit deiner Farbe und siehst die verbindlichen Preise, Versandkosten, Lieferzeiten sowie Rückgabe- und Zahlungsbedingungen.</p></details>
+    </div></div></section>
+  </main>
+  <footer class="footer"><div class="wrap"><div class="footer-top"><a class="logo logo-image" href="#main" aria-label="Stanley – zurück zum Anfang"><img src="assets/bild-da3314476a5d.png" alt="Stanley" width="2170" height="725"></a><p class="footer-tag">Ein bisschen mehr du. Jeden Tag.</p><a class="textlink" href="#farben">Finde deine Farbe <span aria-hidden="true">↗</span></a></div><div class="footer-bottom"><span>STANLEY · HEALTH & LIFESTYLE CONCEPT</span><div class="footer-links"><a href="https://eu.stanley1913.com/de/pages/contact" target="_blank" rel="noopener noreferrer">Stanley kontaktieren ↗</a><button type="button" data-dialog="imprint">Impressum</button><button type="button" data-dialog="privacy">Datenschutz</button><button type="button" data-dialog="credits">Bildnachweise</button></div></div><p class="concept">Unabhängiges Designkonzept, keine offizielle Stanley-Webseite. Marken und Produktbilder gehören ihren jeweiligen Rechteinhabern. Kein eigener Verkauf. Vor einem kommerziellen Einsatz Betreiberangaben, rechtliche Texte und Bildnutzungsrechte ergänzen bzw. prüfen.</p></div></footer>
+  <dialog id="info-dialog" aria-labelledby="dialog-title"><button class="dialog-close" type="button" aria-label="Schließen">×</button><h2 id="dialog-title"></h2><p id="dialog-text"></p></dialog>
+  <script>
+    /* Alle Interaktionen laufen direkt im Browser, ohne Bibliotheken. */
+    const variants = {
+      rose: {name:'Rose Quartz 2.0', image:'assets/bild-0158f689913f.webp', background:'#ebd2ce', id:'53973526446440'},
+      pistachio: {name:'Helles Olivgrün (Illustration)', image:'assets/bild-8b173b8bd691.webp', background:'#dce1c8', id:null},
+      cream: {name:'Cream 2.0', image:'assets/bild-8bbd4b03d78e.webp', background:'#e9e3d4', id:null},
+      black: {name:'Black 2.0', image:'assets/bild-85dfeeeb26d1.webp', background:'#c6cdc3', id:'53973526413672'}
+    };
+    variants.blue = {name:'Hellblau (Illustration)', image:variants.cream.image, background:'#d9e6e8', id:null};
+    variants.lilac = {name:'Lila (Illustration)', image:variants.cream.image, background:'#e7dfe9', id:null};
+    const creativeNames = {rose:'Powder Rose', pistachio:'Olivenlicht', cream:'Wolkencreme', blue:'Himmelspause', lilac:'Fliedermoment', black:'Mitternachtsflow'};
+    const shopBase = 'https://eu.stanley1913.com/de/products/quencher-h2-0-flowstate-tumbler-1-18-l';
+    const filters = {
+      rose: '', cream: '', black: '',
+      pistachio:'sepia(.25) saturate(.75) hue-rotate(12deg) drop-shadow(0 20px 17px rgba(38,39,26,.11))',
+      blue:'sepia(.35) saturate(.65) hue-rotate(155deg) drop-shadow(0 20px 17px rgba(38,39,26,.11))',
+      lilac:'sepia(.35) saturate(.65) hue-rotate(235deg) drop-shadow(0 20px 17px rgba(38,39,26,.11))'
+    };
+    const colorButtons = [...document.querySelectorAll('[data-color]')];
+    const byId = id => document.getElementById(id);
+    const setText = (id,text) => { const node=byId(id); if(node) node.textContent=text; };
+    function selectColor(button) {
+      const key=button.dataset.color, variant=variants[key];
+      if(!variant) return;
+      const name=(creativeNames[key] || variant.name)+' · '+(variant.id || key==='cream' ? variant.name : 'Farbentwurf');
+      colorButtons.forEach(item=>item.setAttribute('aria-pressed',String(item===button)));
+      setText('color-name',name); setText('stage-color',name); setText('final-color',name);
+      const stage=byId('product-stage'), final=document.querySelector('.final');
+      if(stage) stage.style.background=variant.background || 'var(--rose)';
+      if(final) final.style.background=variant.background || 'var(--rose)';
+      const simulated=['pistachio','blue','lilac'].includes(key);
+      ['illustration-label','final-illustration'].forEach(id=>{const el=byId(id);if(el) el.hidden=!simulated});
+      ['product-image','final-image'].forEach(id=>{
+        const img=byId(id); if(!img) return;
+        if(img.getAttribute('src')!==variant.image) img.setAttribute('src',variant.image);
+        img.alt=simulated ? 'Illustrierter Farbentwurf '+name+' auf Basis eines anderen Produktbilds' : 'Stanley Quencher H2.0 FlowState in '+variant.name;
+        img.style.filter=filters[key] || '';
+      });
+      const verified=Boolean(variant.id);
+      document.querySelectorAll('.shop-link').forEach(link=>{
+        link.href=verified ? shopBase+'?variant='+variant.id : shopBase;
+        link.setAttribute('aria-label',verified ? 'Im Stanley-Shop ansehen: '+variant.name : 'Allgemeine Produktseite im Stanley-Shop öffnen; Farbe bitte dort prüfen');
+      });
+      setText('variant-note', verified ? 'Shop-Farbe: '+variant.name+'. Preis, Farbe und Verfügbarkeit gelten im Shop.' : simulated ? 'Illustration: Für diesen Farbentwurf ist keine Shop-Variante zugeordnet. Die allgemeine Produktseite öffnet sich.' : 'Eine passende Shop-Variante ist nicht überprüft. Die allgemeine Produktseite öffnet sich.');
+    }
+    colorButtons.forEach((button,index)=>{
+      button.addEventListener('click',()=>selectColor(button));
+      button.addEventListener('keydown',event=>{
+        const offset=event.key==='ArrowRight'||event.key==='ArrowDown'?1:event.key==='ArrowLeft'||event.key==='ArrowUp'?-1:0;
+        if(!offset) return;
+        event.preventDefault(); const next=colorButtons[(index+offset+colorButtons.length)%colorButtons.length]; next.focus(); selectColor(next);
+      });
+    });
+    const initialButton=colorButtons.find(button=>button.dataset.color==='black');
+    if(initialButton) selectColor(initialButton);
+    const menuButton = document.querySelector('.menu-toggle');
+    const menu = byId('navigation');
+    function closeMenu(restoreFocus=false){
+      if(!menu || !menuButton) return;
+      const wasOpen=menu.classList.contains('open'); menu.classList.remove('open'); document.body.classList.remove('menu-open');
+      menuButton.setAttribute('aria-expanded','false'); menuButton.setAttribute('aria-label','Menü öffnen'); menuButton.textContent='☰';
+      if(wasOpen && restoreFocus) menuButton.focus();
+    }
+    if(menu && menuButton){
+      menuButton.addEventListener('click',()=>{if(menu.classList.contains('open')){closeMenu();return;} menu.classList.add('open');document.body.classList.add('menu-open');menuButton.setAttribute('aria-expanded','true');menuButton.setAttribute('aria-label','Menü schließen');menuButton.textContent='×';menu.querySelector('a')?.focus();});
+      menu.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>closeMenu()));
+      document.addEventListener('click',event=>{if(menu.classList.contains('open')&&!menu.contains(event.target)&&!menuButton.contains(event.target))closeMenu();});
+      document.addEventListener('keydown',event=>{
+        if(!menu.classList.contains('open'))return;
+        if(event.key==='Escape'){event.preventDefault();closeMenu(true);return;}
+        if(event.key!=='Tab')return;
+        const focusables=[menuButton,...menu.querySelectorAll('a')];const first=focusables[0],last=focusables[focusables.length-1];
+        if(event.shiftKey && document.activeElement===first){event.preventDefault();last.focus();}
+        else if(!event.shiftKey && document.activeElement===last){event.preventDefault();first.focus();}
+      });
+      window.addEventListener('resize',()=>{if(window.innerWidth>900)closeMenu();});
+    }
+    const dialog = document.getElementById('info-dialog');
+    const notices = {
+      imprint: ['Impressum · Konzept','Diese HTML-Datei ist ein unabhängiger Gestaltungsentwurf und kein offizielles Angebot von Stanley. Für eine Veröffentlichung müssen hier Name, ladungsfähige Anschrift und Kontakt des tatsächlichen Webseitenbetreibers sowie weitere erforderliche Angaben ergänzt werden. Käufe erfolgen ausschließlich im verlinkten Stanley-Shop.'],
+      privacy: ['Datenschutz · Konzept','Diese HTML-Datei verwendet keine Analysewerkzeuge, setzt keine Cookies und speichert keine Formulardaten. Bilder und das Symbol liegen lokal im assets-Ordner; CSS und JavaScript sind in der HTML-Datei enthalten. Beim Öffnen externer Links gelten die Datenschutzbedingungen der jeweiligen Zielseite. Bei einer späteren Veröffentlichung muss dieser Text an den tatsächlichen Hostinganbieter und alle ergänzten Dienste angepasst werden.'],
+      credits: ['Bildnachweise','Produkt- und Lifestylebilder: Stanley 1913, übernommen aus der bereitgestellten Vorlage. Sie liegen lokal im assets-Ordner. Olivgrün, Hellblau und Lila sind farblich bearbeitete Illustrationen. Sie stellen keine Kundenempfehlungen dar. Alle Marken- und Bildrechte verbleiben bei ihren jeweiligen Rechteinhabern.']
+    };
+    document.querySelectorAll('[data-dialog]').forEach(button=>button.addEventListener('click',()=>{const content=notices[button.dataset.dialog];document.getElementById('dialog-title').textContent=content[0];document.getElementById('dialog-text').textContent=content[1];dialog.showModal();}));
+    document.querySelector('.dialog-close').addEventListener('click',()=>dialog.close());
+    dialog.addEventListener('click',event=>{if(event.target===dialog){const r=dialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)dialog.close();}});
+    if('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){document.documentElement.classList.add('js');const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.remove('pending');observer.unobserve(entry.target);}});},{threshold:.06});document.querySelectorAll('.reveal').forEach(item=>{item.classList.add('pending');observer.observe(item);});}
+  </script>
+</body>
+</html>
